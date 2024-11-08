@@ -1,0 +1,9 @@
+/* App.css o index.css */
+
+body {
+    background-image: url('./assets/justice.jpg'); /* Ajusta la ruta si es necesario */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Esto hace que el fondo permanezca fijo al hacer scroll */
+}
