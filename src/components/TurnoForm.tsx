@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 
 const TurnoForm: React.FC = () => {
     const [isRegistered, setIsRegistered] = useState(false); // Simula si el usuario está registrado o no

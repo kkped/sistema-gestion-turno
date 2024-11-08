@@ -17,7 +17,7 @@ const UserDashboard: React.FC = () => {
                     </Link>
                 </div>
             ),
-        },
+        }, 
         {
             title: "Reservar Turno",
             content: (

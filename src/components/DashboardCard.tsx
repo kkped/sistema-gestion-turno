@@ -3,7 +3,7 @@ import React from "react";
 
 interface DashboardCardProps{
     title: string;
-    content: string;
+     content: React.ReactNode;
 }
 
 const DashboardCard: React.FC <DashboardCardProps> = ({title, content}) => {
@@ -16,5 +16,5 @@ const DashboardCard: React.FC <DashboardCardProps> = ({title, content}) => {
         </div>
     );
 };
-
+ 
 export default DashboardCard;
