@@ -15,8 +15,10 @@ import CivilRegistration from './components/pages/services/CivilRegistration';
 import CaseMonitoring from './components/pages/services/CaseMonitoring';
 import Conciliation from './components/pages/services/Conciliation';
 import AuthenticationNotary from './components/pages/services/AuthenticationNotary';
-import News from './components/pages/News';
+import News from './components/pages/NewData';
 import Contact from './components/pages/Contac';
+import DetailsNews from './components/pages/DetailsNews';
+import AdditionalContent from './components/pages/AdditionalContent';
 
 function App() {
 
@@ -43,6 +45,8 @@ function App() {
             <Route path="/services/authentication-notary" element={< AuthenticationNotary/>} />
             <Route path='/noticias' element ={<News />} />
             <Route path='/contacto' element ={<Contact/>} />
+            <Route path="/noticia/:id" element={< DetailsNews/>} />
+            <Route path="/contenido-adicional" element={<AdditionalContent/>} />
           </Routes>
         </main>
         <Footer />

@@ -5,62 +5,42 @@ import { FaHome, FaClipboardList, FaPlusCircle, FaBars, FaTimes, FaNewspaper, Fa
 
 const Navbar: React.FC = () => {
     const location = useLocation();
-    const [isOpen, setIsOpen] = useState(false); // Estado para controlar el menú hamburguesa
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <nav className="bg-black text-white p-6 shadow-lg">
+        <nav className="bg-black text-white p-6 shadow-lg sticky top-0 z-50">
             <div className="max-w-6xl mx-auto flex items-center justify-between">
-                {/* Logo en la esquina superior izquierda */}
-                <Link to="/" className="flex items-center space-x-2">
-                    <img src={logo} alt="Logo" className="h-10 w-10" />
-                    <span className="text-2xl font-bold text-white">TurnoMax</span>
+                {/* Logo */}
+                <Link to="/" className="flex items-center space-x-3">
+                    <img src={logo} alt="Logo" className="h-10 w-10 rounded-full shadow-lg" />
+                    <span className="text-2xl font-semibold tracking-wide text-white hover:text-gray-200 transition">TurnoMax</span>
                 </Link>
 
-                {/* Icono del menú hamburguesa en pantallas pequeñas */}
+                {/* Toggle Menu Button */}
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="text-white focus:outline-none">
                         {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                     </button>
                 </div>
 
-                {/* Enlaces de navegación - visibles en pantallas medianas y grandes */}
-                <ul className={`md:flex md:space-x-8 ${isOpen ? "block" : "hidden"} mt-4 md:mt-0`}>
-                    <li className={location.pathname === '/' ? 'font-bold text-green-300' : ''}>
-                        <Link to="/" className="flex items-center space-x-2 hover:text-green-300 transition">
-                            <FaHome />
-                            <span>Inicio</span>
-                        </Link>
-                    </li>
-
-                    <li className={location.pathname === '/dashboard' ? 'font-bold text-green-300' : ''}>
-                        <Link to="/dashboard" className="flex items-center space-x-2 hover:text-green-300 transition">
-                            <FaClipboardList />
-                            <span>Mis Turnos</span>
-                        </Link>
-                    </li>
-
-                    <li className={location.pathname === '/turno-request' ? 'font-bold text-green-300' : ''}>
-                        <Link to="/turno-request" className="flex items-center space-x-2 hover:text-green-300 transition">
-                            <FaPlusCircle />
-                            <span>Solicitar Turnos</span>
-                        </Link>
-                    </li>
-
-                    <li className={location.pathname === '/noticias' ? 'font-bold text-green-300' : ''}>
-                        <Link to="/noticias" className="flex items-center space-x-2 hover:text-green-300 transition">
-                            <FaNewspaper />
-                            <span>Noticias</span>
-                        </Link>
-                    </li>
-
-                    <li className={location.pathname === '/contacto' ? 'font-bold text-green-300' : ''}>
-                        <Link to="/contacto" className="flex items-center space-x-2 hover:text-green-300 transition">
-                            <FaPhoneAlt />
-                            <span>Contactos</span>
-                        </Link>
-                    </li>
+                {/* Navigation Links */}
+                <ul className={`flex-col md:flex md:flex-row md:space-x-6 mt-4 md:mt-0 ${isOpen ? "flex" : "hidden"} transition-all duration-300 ease-in-out`}>
+                    {[
+                        { to: "/", label: "Inicio", icon: <FaHome /> },
+                        { to: "/dashboard", label: "Mis Turnos", icon: <FaClipboardList /> },
+                        { to: "/turno-request", label: "Solicitar Turnos", icon: <FaPlusCircle /> },
+                        { to: "/noticias", label: "Noticias", icon: <FaNewspaper /> },
+                        { to: "/contacto", label: "Contactos", icon: <FaPhoneAlt /> }
+                    ].map((link, index) => (
+                        <li key={index} className={`p-2 rounded-lg ${location.pathname === link.to ? "bg-gray-700 text-white" : "hover:bg-gray-600 hover:text-white"} transition`}>
+                            <Link to={link.to} className="flex items-center space-x-2">
+                                {link.icon}
+                                <span className="text-lg font-medium">{link.label}</span>
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </div>
         </nav>

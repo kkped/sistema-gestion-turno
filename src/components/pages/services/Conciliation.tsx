@@ -8,6 +8,7 @@ const Conciliation: React.FC = () => {
     const [time, setTime] = useState('');
     const [errors, setErrors] = useState<{ name?: string; email?: string }>({});
 
+    // Validación de campos
     const validateForm = () => {
         const newErrors: { name?: string; email?: string } = {};
         if (!name) newErrors.name = 'El nombre es obligatorio';
@@ -20,6 +21,7 @@ const Conciliation: React.FC = () => {
         return Object.keys(newErrors).length === 0;
     };
 
+    // Envío del formulario
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (validateForm()) {

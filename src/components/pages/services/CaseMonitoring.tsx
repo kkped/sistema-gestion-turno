@@ -36,7 +36,6 @@ const CaseMonitoring: React.FC = () => {
         <div className="max-w-3xl mx-auto p-8 bg-white shadow-lg rounded-lg mt-10">
             <h2 className="text-3xl font-bold text-blue-800 mb-4">Seguimiento y Monitoreo de Casos</h2>
             
-            {/* Descripción del servicio */}
             <p className="text-gray-700 mb-6">
                 Nuestro servicio de seguimiento y monitoreo de casos te permite obtener actualizaciones constantes 
                 sobre el estado de tus casos legales o administrativos. Este servicio está diseñado para mantenerte 
@@ -46,7 +45,7 @@ const CaseMonitoring: React.FC = () => {
             <h3 className="text-xl font-semibold text-blue-600 mb-4">Reserva tu Turno</h3>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="form-group">
-                    <label htmlFor="name" className="block font-semibold mb-1">Nombre:</label>
+                    <label htmlFor="name" className="block font-semibold text-gray-700 mb-1">Nombre:</label>
                     <div className="relative">
                         <FaUser className="absolute left-3 top-3 text-gray-400" />
                         <input
@@ -64,7 +63,7 @@ const CaseMonitoring: React.FC = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="email" className="block font-semibold mb-1">Correo Electrónico:</label>
+                    <label htmlFor="email" className="block font-semibold text-gray-700 mb-1">Correo Electrónico:</label>
                     <div className="relative">
                         <FaEnvelope className="absolute left-3 top-3 text-gray-400" />
                         <input
@@ -82,7 +81,7 @@ const CaseMonitoring: React.FC = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="date" className="block font-semibold mb-1">Fecha:</label>
+                    <label htmlFor="date" className="block font-semibold text-gray-700 mb-1">Fecha:</label>
                     <div className="relative">
                         <FaCalendarAlt className="absolute left-3 top-3 text-gray-400" />
                         <input
@@ -97,7 +96,7 @@ const CaseMonitoring: React.FC = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="time" className="block font-semibold mb-1">Hora:</label>
+                    <label htmlFor="time" className="block font-semibold text-gray-700 mb-1">Hora:</label>
                     <div className="relative">
                         <FaClock className="absolute left-3 top-3 text-gray-400" />
                         <input

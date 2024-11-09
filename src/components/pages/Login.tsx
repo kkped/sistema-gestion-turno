@@ -35,57 +35,54 @@ const Login: React.FC = () => {
     e.preventDefault();
     if (validateForm()) {
       console.log('Form data:', formData); // Aquí se puede integrar con una API de autenticación
-      // Lógica de autenticación aquí
     }
   };
 
-  
   return (
     <div 
-      className="min-h-screen flex items-center justify-center" 
-      style={{ backgroundImage: `url(${house})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      className="min-h-screen flex items-center justify-center bg-cover bg-center" 
+      style={{ backgroundImage: `url(${house})` }}
     >
-      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg bg-opacity-90"> {/* bg-opacity para mejor legibilidad */}
-        <h1 className="text-3xl font-semibold text-center mb-6">Iniciar Sesión</h1>
+      <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-2xl bg-opacity-90">
+        <h1 className="text-3xl font-semibold text-center mb-6 text-blue-700">Iniciar Sesión</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-gray-700" htmlFor="email">Correo Electrónico</label>
+            <label className="block text-gray-700 font-medium" htmlFor="email">Correo Electrónico</label>
             <input
               type="email"
               name="email"
               id="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email ? 'border-red-500' : ''}`}
+              className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.email ? 'border-red-500 focus:ring-red-500' : 'focus:ring-blue-500'}`}
               required
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
           </div>
           <div className="mb-6">
-            <label className="block text-gray-700" htmlFor="password">Contraseña</label>
+            <label className="block text-gray-700 font-medium" htmlFor="password">Contraseña</label>
             <input
               type="password"
               name="password"
               id="password"
               value={formData.password}
               onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.password ? 'border-red-500' : ''}`}
+              className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 ${errors.password ? 'border-red-500 focus:ring-red-500' : 'focus:ring-blue-500'}`}
               required
             />
-            {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+            {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
+            className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 ease-in-out"
           >
             Iniciar Sesión
           </button>
         </form>
 
-
         <p className="text-center text-gray-600 mt-4">
           ¿No tienes una cuenta?{' '}
-          <Link to="/register" className="text-blue-500 hover:underline">
+          <Link to="/register" className="text-blue-600 hover:underline font-medium">
             Regístrate aquí
           </Link>
         </p>

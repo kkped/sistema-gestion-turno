@@ -13,7 +13,6 @@ const Home: React.FC = () => {
         if (userInput.trim()) {
             setMessages([...messages, userInput]);
             setUserInput("");
-            // Respuesta automática de ejemplo
             setTimeout(() => {
                 setMessages((prevMessages) => [
                     ...prevMessages,
@@ -24,37 +23,23 @@ const Home: React.FC = () => {
     };
 
     return (
-        <div
-            className="p-8 max-w-5xl mx-auto space-y-12 text-center min-h-screen"
-            style={{
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-            }}
-        >
+        <div className="p-8 max-w-5xl mx-auto space-y-12 text-center min-h-screen bg-cover bg-center bg-no-repeat">
             {/* Encabezado de Bienvenida */}
             <header className="text-center">
-                <h1 className="text-5xl font-bold text-white mb-4">
-                    Bienvenidos a la Casa de la Justicia Quibdó
-                </h1>
-                <p className="text-lg text-white mb-10">
-                    Accede a los servicios de justicia de manera rápida y organizada.
-                </p>
+                <h1 className="text-5xl font-bold text-white mb-4">Bienvenidos a la Casa de la Justicia Quibdó</h1>
+                <p className="text-lg text-white mb-10">Accede a los servicios de justicia de manera rápida y organizada.</p>
             </header>
 
-            {/* Sección de Importancia de Acudir a la Casa de Justicia */}
+            {/* Secciones de Contenido */}
             <Section 
                 title="Importancia de Acudir a la Casa de Justicia" 
                 icon={<FaInfoCircle className="text-blue-500" />} 
-                content="La Casa de Justicia ofrece un espacio seguro y accesible para resolver disputas, obtener orientación legal y facilitar la mediación en conflictos. Es un servicio esencial para la comunidad que permite a los ciudadanos acceder a justicia de manera efectiva."
+                content="La Casa de Justicia ofrece un espacio seguro y accesible para resolver disputas, obtener orientación legal y facilitar la mediación en conflictos."
                 backgroundColor="bg-blue-50"
             />
 
-            {/* Sección de Acceso a Funciones Principales */}
             <section className="bg-blue-100 p-6 rounded-lg shadow-md">
-                <h2 className="text-3xl font-semibold text-center mb-6">
-                    Acceso a Funciones Principales
-                </h2>
+                <h2 className="text-3xl font-semibold text-center mb-6">Acceso a Funciones Principales</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
                     {[
                         { to: "/login", label: "Iniciar Sesión" },
@@ -73,20 +58,18 @@ const Home: React.FC = () => {
                 </div>
             </section>
 
-            {/* Sección de Misión y Visión */}
             <Section 
                 title="Misión y Visión" 
                 icon={<FaRegCalendarAlt className="text-blue-500" />} 
                 content={
                     <>
-                        <p className="mb-2"><strong>Misión:</strong> Brindar acceso a servicios de justicia de calidad para la comunidad, facilitando la resolución de conflictos de manera eficiente y respetuosa.</p>
+                        <p className="mb-2"><strong>Misión:</strong> Brindar acceso a servicios de justicia de calidad para la comunidad.</p>
                         <p><strong>Visión:</strong> Ser un referente de justicia en Quibdó, promoviendo la paz y el desarrollo social a través de la accesibilidad a servicios legales.</p>
                     </>
                 }
                 backgroundColor="bg-gray-100"
             />
 
-            {/* Sección de Instrucciones para los Usuarios */}
             <Section 
                 title="Instrucciones para los Usuarios" 
                 icon={<FaInfoCircle className="text-green-500" />} 
@@ -100,7 +83,6 @@ const Home: React.FC = () => {
                 backgroundColor="bg-green-100"
             />
 
-            {/* Sección para el Video Explicativo */}
             <Section 
                 title="Video Explicativo" 
                 icon={<FaVideo className="text-blue-500" />} 
@@ -119,7 +101,6 @@ const Home: React.FC = () => {
                 backgroundColor="bg-gray-100"
             />
 
-            {/* Mapa de Ubicación */}
             <Section 
                 title="Ubicación de la Casa de Justicia" 
                 icon={<FaMapMarkerAlt className="text-blue-500" />} 

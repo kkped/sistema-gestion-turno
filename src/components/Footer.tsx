@@ -3,21 +3,23 @@ import { FaFacebook, FaTwitter, FaInstagram, FaPhoneAlt, FaEnvelope, FaMapMarker
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-gray-700 text-white p-10 mt-8 text-center">
+        <footer className="bg-gray-800 text-white p-10 mt-8 text-center">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
 
                 {/* Columna de información de contacto */}
                 <div>
                     <h2 className="text-lg font-semibold text-blue-400 mb-4">Contáctanos</h2>
-                    <p className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                        <FaMapMarkerAlt /> Calle 10 # 2-36, Quibdó, Chocó
-                    </p>
-                    <p className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                        <FaPhoneAlt /> +57 123 456 7890
-                    </p>
-                    <p className="flex items-center justify-center md:justify-start gap-2">
-                        <FaEnvelope /> contacto@casadejusticia.com
-                    </p>
+                    <div className="space-y-2">
+                        <p className="flex items-center justify-center md:justify-start gap-2">
+                            <FaMapMarkerAlt className="text-blue-300" /> Calle 10 # 2-36, Quibdó, Chocó
+                        </p>
+                        <p className="flex items-center justify-center md:justify-start gap-2">
+                            <FaPhoneAlt className="text-blue-300" /> +57 123 456 7890
+                        </p>
+                        <p className="flex items-center justify-center md:justify-start gap-2">
+                            <FaEnvelope className="text-blue-300" /> contacto@casadejusticia.com
+                        </p>
+                    </div>
                 </div>
 
                 {/* Columna de redes sociales */}
@@ -45,14 +47,12 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Línea divisoria y mensaje adicional */}
-            <div className="mt-8 border-t border-gray-600 pt-4">
-                <p className="text-xs text-gray-300">
+            <div className="mt-8 border-t border-gray-700 pt-4">
+                <p className="text-xs text-gray-400">
                     Este sitio está diseñado para ofrecer información y servicios de justicia accesibles para todos.
                 </p>
             </div>
         </footer>
     );
-};
-
-
+}
 export default Footer;

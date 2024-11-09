@@ -28,17 +28,21 @@ const UserProfile: React.FC = () => {
     };
 
     return (
-        <div className="p-8 max-w-md mx-auto bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg shadow-lg">
+        <div className="p-8 max-w-md mx-auto bg-white rounded-lg shadow-lg">
             <h2 className="text-3xl font-bold text-center mb-6 text-blue-700">Perfil de Usuario</h2>
 
             {/* Modo de Visualización */}
             {!editMode ? (
                 <>
                     <div className="mb-4">
-                        <p className="text-lg font-medium"><strong>Nombre:</strong> {name}</p>
+                        <p className="text-lg font-medium text-gray-800">
+                            <strong>Nombre:</strong> {name}
+                        </p>
                     </div>
                     <div className="mb-4">
-                        <p className="text-lg font-medium"><strong>Email:</strong> {email}</p>
+                        <p className="text-lg font-medium text-gray-800">
+                            <strong>Email:</strong> {email}
+                        </p>
                     </div>
                     <button
                         onClick={() => setEditMode(true)}
@@ -50,7 +54,7 @@ const UserProfile: React.FC = () => {
             ) : (
                 // Modo de Edición
                 <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
-                    {error && <p className="text-red-500">{error}</p>}
+                    {error && <p className="text-red-500 text-center">{error}</p>}
 
                     <div>
                         <label className="block mb-2 text-sm font-semibold text-gray-700">Nombre</label>
@@ -58,7 +62,8 @@ const UserProfile: React.FC = () => {
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                            required
                         />
                     </div>
 
@@ -68,7 +73,8 @@ const UserProfile: React.FC = () => {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300" 
+                            required
                         />
                     </div>
 
@@ -78,8 +84,8 @@ const UserProfile: React.FC = () => {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
-                            placeholder="Nueva contraseña" required
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+                            placeholder="Nueva contraseña"
                         />
                         <small className="text-gray-500">Deja en blanco si no deseas cambiarla</small>
                     </div>
